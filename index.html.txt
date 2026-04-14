@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NP | NEON PHANTOMS OFFICIAL</title>
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #050505;
+            --card-bg: rgba(20, 20, 25, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Orbitron', sans-serif; /* Если шрифт не подгрузится, будет стандартный sans-serif */
+            overflow-x: hidden;
+        }
+
+        /* Фоновый эффект сканирования */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, rgba(0,242,255,0.1) 0%, rgba(5,5,5,1) 70%);
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 5rem;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
+            animation: glitch 3s infinite;
+        }
+
+        .cool-phrase {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            font-style: italic;
+            text-shadow: 0 0 5px var(--neon-purple);
+        }
+
+        /* Навигация (Кнопки) */
+        nav {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            padding: 15px 30px;
+            border: 2px solid var(--neon-blue);
+            background: transparent;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover {
+            background: var(--neon-blue);
+            color: black;
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        /* Таблица результатов */
+        .section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border: 1px solid #333;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+
+        th { color: var(--neon-blue); text-transform: uppercase; }
+
+        /* Твое 2-е место — ОСОБЕННЫЙ СТИЛЬ */
+        .highlight-me {
+            background: rgba(255, 215, 0, 0.15) !important;
+            border: 2px solid gold;
+            box-shadow: inset 0 0 20px gold;
+        }
+
+        .highlight-me td {
+            color: gold;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .status-badge {
+            background: gold;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="main-title">Neon Phantoms</h1>
+    <p class="cool-phrase">"Пока другие пытались выжить, я доминировал на поле боя."</p>
+    
+    <nav>
+        <a href="#stats" class="nav-btn">Результаты</a>
+        <a href="#about" class="nav-btn">О команде</a>
+        <a href="https://t.me/твой_канал" target="_blank" class="nav-btn">Вступить</a>
+    </nav>
+</header>
+
+<div id="stats" class="section">
+    <h2 style="margin-bottom: 30px; color: var(--neon-blue);">TOP ELITE PLAYERS 2026</h2>
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Место</th>
+                <th>Игрок</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Cyber_Ghost</td><td>Pro</td></tr>
+            <tr class="highlight-me">
+                <td>2</td>
+                <td>NP | S-KAMRON</td>
+                <td>LEGEND <span class="status-badge">GOD LIKE AIM</span></td>
+            </tr>
+            <tr><td>3</td><td>Shadow_Ripper</td><td>Elite</td></tr>
+            <tr><td>4</td><td>Neon_Viper</td><td>Veteran</td></tr>
+            <tr><td>5</td><td>Dark_Knight</td><td>Veteran</td></tr>
+            <tr><td>6</td><td>Phantom_One</td><td>Soldier</td></tr>
+            <tr><td>7</td><td>Cyber_Hunter</td><td>Soldier</td></tr>
+            <tr><td>8</td><td>Glitch_Master</td><td>Newbie</td></tr>
+            <tr><td>9</td><td>Void_Walker</td><td>Newbie</td></tr>
+            <tr><td>10</td><td>Storm_Bringer</td><td>Newbie</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="about" class="section" style="text-align: center;">
+    <h2 style="color: var(--neon-purple);">О НАС</h2>
+    <p style="margin-top: 20px; font-size: 1.1rem; line-height: 1.6;">
+        NEON PHANTOMS — это не просто команда. Это киберспортивная элита. <br>
+        Мы прошли через сотни сражений, чтобы занять свои места в топе. 
+    </p>
+</div>
+
+</body>
+</html>
